@@ -17,6 +17,9 @@ Mode - The most common value
 In this task we calculate the standard deviation of a column in our data. SD describes how spread out the values are. or how far individual value is from mean of group.
 #### Task 3
 In this task we calculate the percentile 25/50/75 of a column in our data. Percentiles are used in statistics to give you a number that describes the value that a given percent of the values are lower than.
+#### Task 4
+In this task we plot the data distributions
+
 
 
 
