@@ -1,6 +1,6 @@
 import numpy
 import matplotlib.pyplot as plt
-x = numpy.random.normal(5.0, 1.0, 100000)
+x = numpy.random.normal(10.0, 2.0, 10000)
 
 
 print(x)
