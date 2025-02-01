@@ -14,4 +14,6 @@ Mean - The average value
 Median - The mid point value
 Mode - The most common value
 #### Task 2
-In this task we calculate the standard deviation of a column in our data.
+In this task we calculate the standard deviation of a column in our data. SD describes how spread out the values are. or how far individual value is from mean of group.
+
+
