@@ -21,7 +21,7 @@ In this task we calculate the percentile 25/50/75 of a column in our data. Perce
 In this task we plot the data distributions
 #### Task 5
 In this task we make a set of random variable in normal distribution and plot the bell graph of distributions
-#### Task 5
+#### Task 6
 In this task we make a scatter plot
 
 
