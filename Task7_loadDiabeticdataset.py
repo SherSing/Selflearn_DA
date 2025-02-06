@@ -27,6 +27,6 @@ print("**************")
 # Plot histogram of bmi against sex
 
 hist, bin_edges=all_vriables.hist(column='bmi', by='sex')
-hist.plot().
+hist.plot()
 
 plt.show()
