@@ -14,4 +14,4 @@ sudo nano ~/.zshrc
 
 export PATH=/usr/local/bin/python3.12:$PATH
 
-source ~/.zshrc)
+source ~/.zshrc
