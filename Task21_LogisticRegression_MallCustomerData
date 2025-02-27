@@ -1,0 +1,48 @@
+import numpy
+import pandas as pd
+
+from sklearn import linear_model
+from sklearn.model_selection import train_test_split
+ 
+# import the metrics class
+from sklearn import metrics
+
+ 
+import matplotlib.pyplot as plt
+
+from sklearn.metrics import classification_report
+
+df = pd.read_csv('./Raw Data/Mall_Customers.csv')
+# print(df.head())
+
+#Reshaped for Logistic function.
+X = df[['Age', 'Annual Income (k$)','Spending Score (1-100)']].values
+# print(X)
+y = df['Gender'].map({'Male': 0, 'Female': 1}).values
+# print(y)
+# y = numpy.array([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=16)
+
+
+
+logr = linear_model.LogisticRegression()
+logr.fit(X_train,y_train)
+
+y_predicted = logr.predict(X_test)
+print("y predicted is",y_predicted)
+print("y test actual is",y_test)
+
+
+cnf_matrix = metrics.confusion_matrix(y_test, y_predicted)
+print(cnf_matrix)
+target_names = ['Male', 'Female']
+print(classification_report(y_test, y_predicted, target_names=target_names))
+
+
+y_pred_proba = logr.predict_proba(X_test)[::,1]
+fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
+auc = metrics.roc_auc_score(y_test, y_pred_proba)
+plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
+plt.legend(loc=4)
+plt.show()
