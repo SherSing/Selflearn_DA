@@ -15,9 +15,16 @@ logr.fit(X,y)
 
 #predict if tumor is cancerous where the size is 3.46mm:
 predicted = logr.predict(numpy.array([3.46]).reshape(-1,1))
-print(predicted)
-
+print("Predicted value of y given X is 3.46mm:", predicted)
 log_odds = logr.coef_
 odds = numpy.exp(log_odds)
 
-print(odds)
+print("\n Log of odds",odds)
+
+def logit2prob(logr, X):
+  log_odds = logr.coef_ * X + logr.intercept_
+  odds = numpy.exp(log_odds)
+  probability = odds / (1 + odds)
+  return(probability)
+
+print("\n probality X is Malignant",logit2prob(logr, X))
